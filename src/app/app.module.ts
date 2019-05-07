@@ -5,14 +5,14 @@ import {  HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { CommandeComponent } from './commande/commande.component';
-import { CommandeListComponent } from './commande-list/commande-list.component';
+import { CommandeListElodieComponent } from './commande-list-elodie/commande-list-elodie.component';
 import { OrdreServiceService } from './ordre-service.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     CommandeComponent,
-    CommandeListComponent
+    CommandeListElodieComponent
     ],
   imports: [
     BrowserModule,

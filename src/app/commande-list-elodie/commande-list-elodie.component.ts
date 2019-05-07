@@ -7,7 +7,7 @@ import { OrdreServiceService } from '../ordre-service.service';
   templateUrl: './commande-list.component.html',
   styleUrls: ['./commande-list.component.css']
 })
-export class CommandeListComponent implements OnInit {
+export class CommandeListElodieComponent implements OnInit {
 
   produit : Produit = {produitId:0, quantiteProduit:0, produitTaille:"",produitCouleur:"",produitPrix:0};  
   
