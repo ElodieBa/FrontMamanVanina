@@ -1,0 +1,56 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+      
+  <div style="margin-left:auto; margin-right: auto; text-align:center;"> <h1>Ajouter un client</h1></div> 
+  </div><br>
+  
+  <form style="margin-left: 30%;">
+    <div class="titre"><h3> Informations générales</h3></div>
+     <div class="form-row" style="width:49%">
+      <div class="form-group col-md-6">
+        <label for="inputNom">Nom</label>
+        <input type="text"  [(ngModel)]='client.nom' name="nom"class="form-control" id="inputNom" placeholder="Nom">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPrenom">Prénom</label>
+        <input type="text" [(ngModel)]='client.prenom' name="prenom"class="form-control" id="inputPrenom" placeholder="Prénom">
+      </div>
+    </div>
+    <div class="form-row" style="width:49%">
+      <div class="form-group col-md-6">
+        <label for="inputDate">Date de naissance (jj/mm/aaaa)</label>
+        <input type="date" [(ngModel)]='client.dateNaissance' name="dateNaissance"class="form-control" id="inputDate" placeholder="Date de naissance">
+      </div> 
+      <div class="form-group col-md-6">
+          <label for="inputSociete">Société</label>
+          <input type="text" [(ngModel)]='client.societe' name="societe"class="form-control" id="inputSociete" placeholder="Société">
+        </div> 
+    </div>
+    <div class="form-group" style="width:48%">
+      <label for="inputAddress">Adresse</label>
+      <input type="text" [(ngModel)]='client.adresse' name="adresse"class="form-control" id="inputAddress" placeholder="1234 Main St">
+    </div>
+    <div class="titre"><h3> Contacts</h3></div>
+    <div class="form-group" style="width:48%">
+        <label for="inputMail">Mail</label>
+        <input type="email" [(ngModel)]='client.mail' name="mail"class="form-control" id="inputMail" placeholder="Mail">
+      </div>
+    <div class="form-row" style="width:49%">
+      <div class="form-group col-md-6">
+        <label for="inputTel">N° de téléphone</label>
+        <input type="tel" [(ngModel)]='client.tel' name="tel" class="form-control" id="inputTel">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputFax">Fax</label>
+        <input type="tel" [(ngModel)]='client.fax'name="fax" class="form-control" id="inputFax">
+      </div>
+    </div> 
+   <div class="row"><div style="padding-right:8px ; margin-left:1.5%"><button (click)='saveClient()' class="btn btn-primary">Ajouter</button></div>
+   <div> <a  style="color:white;"class="btn btn-primary" (click)='onBack()' role="button">
+        <i class="glyphicon glyphicon-chevron-left"></i>
+        Retour
+    </a></div>
+  </div>
+  </form>
+ 
+</div>
