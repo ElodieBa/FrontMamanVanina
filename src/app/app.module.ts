@@ -11,6 +11,11 @@ import { OrdreServiceService } from './ordre-service.service';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
+
+import { AjoutClientComponent } from './ajout-client/ajout-client.component';
+import { DetailClientComponent } from './detail-client/detail-client.component';
+import { ClientServiceService } from './client-service.service';
+
 import { CommandeListComponent } from './commande-list/commande-list.component';
 import { CommandeDetailComponent } from './commande-detail/commande-detail.component';
 import { RoutModule } from './rout/rout.module';
@@ -33,6 +38,8 @@ import { NavigationComponent } from './navigation/navigation.component'
 @NgModule({
   declarations: [
     AppComponent,
+    AjoutClientComponent,
+    DetailClientComponent,
     CommandeComponent,
     CommandeListElodieComponent,
     CommandeListComponent,
@@ -48,15 +55,19 @@ import { NavigationComponent } from './navigation/navigation.component'
     AuthentificationComponent,
     NavigationComponent
     ],
+
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RoutModule,
+    RoutModule
   ],
+  
   providers: [OrdreServiceService,
-              FactureService
+              FactureService,
+             ClientServiceService
   ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
