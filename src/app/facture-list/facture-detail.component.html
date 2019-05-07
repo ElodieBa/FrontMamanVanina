@@ -1,0 +1,50 @@
+<div style="text-align:center">Detail de la facture :</div>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        {{pageTitle + ': ' + facture.code}}
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-4"> Numéro : </div>
+                    <div class="col-md-8"> {{facture.numero}} </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4"> Code : </div>
+                     <div class="col-md-8"> {{facture.code}} </div>
+                 </div>
+                 <div class="row">
+                        <div class="col-md-4"> Code client : </div>
+                        <div class="col-md-8"> {{facture.codeClient}} </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4"> Date : </div>
+                    <div class="col-md-8"> {{facture.date}} </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4"> Société : </div>
+                    <div class="col-md-8"> {{facture.societe}} </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4"> Montant : </div>
+                    <div class="col-md-8"> {{facture.montant}} </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4"> Statut : </div>
+                    <div class="col-md-8"> {{facture.statut}} </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4"> Options : </div>
+                    <div class="col-md-8"> {{facture.options}} </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <a class="btn btn-primary" (click)='onBack()' role="button">
+                <i class="glyphicon glyphicon-chevron-left"></i>
+                Retour
+            </a>
+        </div>
+    </div>
+</div>
