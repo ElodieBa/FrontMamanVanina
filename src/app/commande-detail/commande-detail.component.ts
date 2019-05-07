@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ICommande } from '../shared/ICommande';
-import { IProduit } from '../shared/IProduit';
+import { Commande } from '../shared/ICommande';
+import { Produit } from '../shared/IProduit';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -14,7 +14,7 @@ export class CommandeDetailComponent implements OnInit {
 
 
   id: number;
-  commande : ICommande;
+  commande : Commande;
 
  
 

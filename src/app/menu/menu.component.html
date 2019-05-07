@@ -10,8 +10,8 @@
   <li >
     Client
     <ul>
-      <li><a >Liste de clients</a></li>
-      <li><a href="#">Ajout client</a></li>
+      <li><a [routerLink]="['Clients']">Liste de clients</a></li>
+      <li><a [routerLink]="['Ajoutclients']">Ajout client</a></li>
     </ul>
   </li>
 
@@ -19,14 +19,14 @@
       Commande
       <ul>
         <li><a [routerLink]="['commandes']">Liste de commandes</a></li>
-        <li><a href="#">Ajout commande</a></li>
+        <li><a [routerLink]="['AjoutCommande']">Ajout commande</a></li>
       </ul>
     </li>
     <li >
         Facture
         <ul>
-          <li><a >Liste de factures</a></li>
-          <li><a href="#">Ajout facture</a></li>
+          <li><a [routerLink]="['Factures']" >Liste de factures</a></li>
+          <li><a [routerLink]="['AjoutFactures']">Ajout facture</a></li>
         </ul>
       </li>
   </ul>

@@ -15,8 +15,7 @@ export interface Commande {
     commandeReceptionneur : string;
     date: String;
     commandeFabricant : string;
-    commandeModele : string;
-    
-    ListeProduits : Produit;
+    commandeModele : string;   
+    ListeProduits : Produit[];
 
 }

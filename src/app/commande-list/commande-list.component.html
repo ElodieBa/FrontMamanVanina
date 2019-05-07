@@ -32,16 +32,16 @@
               <tbody>
                   <tr *ngFor = 'let commande of filteredCommands'>
                       <td></td>
-                      <td>{{commande.societe}}</td>
-                      <td>{{commande.id}}</td>
+                      <td>{{commande.commandeSociete}}</td>
+                      <td>{{commande.commandeId}}</td>
                       <td>{{commande.date}}</td>
-                      <td>{{commande.modele}}</td>
-                      <td>{{commande.fabricant}}</td>
+                      <td>{{commande.commandeModele}}</td>
+                      <td>{{commande.commandeFabricant}}</td>
                       
                       <td>
-                            <a class="clickable" (click)='detailCommande(commande.id)'><span class="glyphicon glyphicon-eye-open"></span></a>
-                                <a class="clickable" (click)='ModifCommande(commande.id)'><span class="glyphicon glyphicon-pencil"></span></a>
-                                    <a class="clickable" (click)='deleteCommande(commande.id)'><span class="glyphicon glyphicon-trash"></span></a></td>
+                            <a class="clickable" (click)='detailCommande(commande.commandeId)'><span class="glyphicon glyphicon-eye-open"></span></a>
+                                <a class="clickable" (click)='ModifCommande(commande.commandeId)'><span class="glyphicon glyphicon-pencil"></span></a>
+                                    <a class="clickable" (click)='deleteCommande(commande.commandeId)'><span class="glyphicon glyphicon-trash"></span></a></td>
 
                   </tr>
               </tbody>
