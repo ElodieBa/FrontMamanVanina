@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ICommande } from '../shared/ICommande';
-import { IProduit } from '../shared/IProduit';
+import { Commande } from '../shared/ICommande';
+import { Produit } from '../shared/IProduit';
 import { Router } from '@angular/router';
 
 @Component({
@@ -20,60 +20,59 @@ export class CommandeListComponent implements OnInit {
         this._filter = value;
         
     }
-    produits:IProduit []=[
+    produits:Produit []=[
       {
-      "idProduit":1,
-      "taille":"38/40",
-      "couleur":"rose",
-      
-     "prix":25,
-       "quantiteProduit":5,
+      "produitId":1,
+      "produitTaille":"38/40",
+      "produitCouleur":"rose",
+      "produitPrix":25,
+      "quantiteProduit":5,
       }
       ];
-      produits2:IProduit []=[      {
-        "idProduit":2,
-        "taille":"38/40",
-        "couleur":"vert",
+      produits2:Produit []=[      {
+        "produitId":2,
+        "produitTaille":"38/40",
+        "produitCouleur":"vert",
         
-       "prix":25,
+       "produitPrix":25,
          "quantiteProduit":5,
         }];
  
-    filteredCommands : ICommande[];
-    commands : ICommande[] = [{
+    filteredCommands : Commande[];
+    commands : Commande[] = [{
 
-      "id": 1,
-      "coupeEnBout": true,
-      "thermo" : true,
-      "empdbl": true,
-      "thermoType": "string",
-      "faconnier":"string",
-      "societe": "STTtring",
-      "receptionneur": "string",
-      "fabricant": "string",
+      "commandeId": 1,
+      "commandeCoupeEnBout": true,
+      "commandeThermo" : true,
+      "commandeEmplDbl": true,
+      "commandeThermoType": "string",
+      "commandeFaconnier":"string",
+      "commandeSociete": "STTtring",
+      "commandeReceptionneur": "string",
+      "commandeFabricant": "string",
 
-      "modele": "string",
+      "commandeModele": "string",
 
       "date": "31/05/2019",
-      "produits":this.produits,
+      "ListeProduits":this.produits,
     },
     {
 
-      "id": 2,
-      "coupeEnBout": true,
-      "thermo" : true,
-      "empdbl": true,
-      "thermoType": "string",
-      "faconnier":"string",
-      "societe": "abb",
-      "receptionneur": "string",
+      "commandeId": 2,
+      "commandeCoupeEnBout": true,
+      "commandeThermo" : true,
+      "commandeEmplDbl": true,
+      "commandeThermoType": "string",
+      "commandeFaconnier":"string",
+      "commandeSociete": "abb",
+      "commandeReceptionneur": "string",
   
-      "fabricant": "string",
+      "commandeFabricant": "string",
 
-      "modele": "string",
+      "commandeModele": "string",
 
       "date": "31/05/2019",
-      "produits":this.produits2,
+      "ListeProduits":this.produits2,
     }];
 
 
@@ -90,14 +89,14 @@ export class CommandeListComponent implements OnInit {
   }
   
 
-  performFilter(filterBy: string) : ICommande[] {
+  performFilter(filterBy: string) : Commande[] {
     filterBy = filterBy.toLocaleLowerCase();
-    return this.commands.filter((commande : ICommande) => 
-    commande.societe.toLocaleLowerCase().indexOf(filterBy) !== -1);
+    return this.commands.filter((commande : Commande) => 
+    commande.commandeSociete.toLocaleLowerCase().indexOf(filterBy) !== -1);
 }
 deleteCommande(id : number): void {};
 ModifCommande(id : number): void {};
 detailCommande(id : number): void {
-  this.router.navigate(['/detail/',id]);
+  this.router.navigate(['/detailCommande/',id]);
 }
 }

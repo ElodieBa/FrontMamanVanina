@@ -4,8 +4,8 @@ import { OrdreServiceService } from '../ordre-service.service';
 
 @Component({
   selector: 'app-commande-list',
-  templateUrl: './commande-list.component.html',
-  styleUrls: ['./commande-list.component.css']
+  templateUrl: './commande-list-elodie.component.html',
+  styleUrls: ['./commande-list-elodie.component.css']
 })
 export class CommandeListElodieComponent implements OnInit {
 

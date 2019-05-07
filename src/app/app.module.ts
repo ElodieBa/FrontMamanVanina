@@ -32,7 +32,7 @@ import { FactureService } from './facture-list/facture.service';
 
 import { ClientListComponent} from './client-list/client-list.component';
 import { AuthentificationComponent } from './authentification/authentification.component';
-import { NavigationComponent } from './navigation/navigation.component'
+
 
 
 @NgModule({
@@ -48,12 +48,11 @@ import { NavigationComponent } from './navigation/navigation.component'
     AccueilComponent,
     AdresseclientComponent,
     AdresseVaninaComponent,
-    FormFactureComponent
+    FormFactureComponent,
     FactureListComponent,
     FactureDetailComponent,
     ClientListComponent,
-    AuthentificationComponent,
-    NavigationComponent
+    AuthentificationComponent
     ],
 
   imports: [
