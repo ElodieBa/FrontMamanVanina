@@ -1,10 +1,11 @@
 
-export interface IProduit {
-idProduit: number;
-    taille: string;
-    couleur: string;
-    prix: number;
-	quantiteProduit: number;
+export interface Produit {
 
-	
+    produitId : number;
+
+    quantiteProduit : number ;
+    produitTaille : string;
+    produitCouleur : string;
+	produitPrix : number;
+
 }

@@ -1,16 +1,22 @@
-import { IProduit } from './IProduit';
-export interface ICommande {
-    id: number;
-    coupeEnBout: boolean;
-    thermo : boolean;
-    empdbl: boolean;
-    thermoType: string;
-    faconnier:string;
-    societe: string;
-    receptionneur: string;
-    fabricant: string;
-    modele: string;
+
+import { Produit } from './IProduit';
+
+
+export interface Commande {
+
+    commandeId : number;
+    
+    commandeCoupeEnBout : boolean;
+    commandeThermo : boolean;
+    commandeEmplDbl : boolean;
+    commandeThermoType : string;
+    commandeFaconnier : string;
+    commandeSociete : string;
+    commandeReceptionneur : string;
     date: String;
-    produits : IProduit[];
+    commandeFabricant : string;
+    commandeModele : string;
+    
+    ListeProduits : Produit;
 
 }
