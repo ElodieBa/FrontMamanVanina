@@ -1,0 +1,98 @@
+<div class="panel panel-primary">
+
+  <div class="panel-heading">
+    <h1 align = "center">ORDRE DE COUPE</h1>
+  </div>
+  
+  <div class="panel-body">
+
+      <table class="table-responsive">
+          <thead>
+            <tr>
+              <th>Couleur</th>
+              <th>Taille</th>
+              <th>Quantité</th>
+              <th>Prix</th>
+              <td></td>
+            </tr>
+          </thead>
+      
+          <tbody>
+            <tr *ngFor='let produit of liste'>
+              <td>{{bla.   commande.produitCouleur}}</td>
+              <td>{{commande.produitTaille}}</td>
+              <td>{{commande.quantiteProduit}}</td>
+              <td>{{commande.produitPrix}}</td>
+              <td><a class="clickable" (click)='deleteCommande(commande.commandeId)'>Supprimer</a></td>
+            </tr>
+          </tbody>
+        </table>
+
+
+
+    <div class="form-group">
+      <label for="couleur">Couleur :</label>
+      <input type="text" [(ngModel)]='produit.produitCouleur' class="form-control" name="couleur" />
+    </div>
+    <div class="form-group">
+      <label for="taille">Taille :</label>
+      <input type="text" [(ngModel)]='produit.produitTaille' class="form-control" name="taille" />
+    </div>
+    <div class="form-group">
+      <label for="quantite">Quantité :</label>
+      <input type="number" [(ngModel)]='produit.quantiteProduit' class="form-control" name="quantite" />
+    </div>
+    <div class="form-group">
+      <label for="prix">Prix :</label>
+      <input type="number" [(ngModel)]='produit.produitPrix' class="form-control" name="prix" />
+    </div>
+  
+    <button (click)='ajouterProduit()' class="btn btn-primary">Ajouter</button>
+    
+    
+
+    <table>
+      <tr>
+        <td>COUPE EN BOUT :</td>
+        <td>THERMO :</td>
+        <td>EMP/DBL :</td>
+      </tr>
+      <tr>
+        <td>LAIZE TISSUS :</td><input type = "text">
+        <td>EMP/DBL :</td><input type = "text">
+        <td>THERMO :</td><input type = "text">
+      </tr>
+      <tr>
+        <td>FACONNIER :</td><input type = "text">
+        <td>SOCIETE :</td><input type = "text">
+        <td>RECEPTIONNEUR :</td><input type = "text">
+      </tr>
+    </table>
+
+  </div>
+        
+  
+
+
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>

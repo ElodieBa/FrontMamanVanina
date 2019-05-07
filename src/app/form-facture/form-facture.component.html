@@ -1,0 +1,175 @@
+<div class="panel panel-primary">
+    <div class="panel-body">
+        <div style="margin-left: 25%; margin-bottom: -80px">
+            <app-adresse-vanina style="margin-left: 15%"></app-adresse-vanina>
+        </div>
+        <div style="margin-left: 55%; margin-bottom: 40px">
+            <app-adresseclient></app-adresseclient>
+        </div>
+            
+
+        <div align='center'>
+        <h3>FACTURE</h3>
+        </div>
+
+        <br>
+        <br>
+
+        <table class="table table-sm" style="width:600px; margin-left: 30%">
+            <thead>
+                <tr>
+                    <th>Numéro</th>
+                    <th>Date</th>
+                    <th>Code Client</th>
+                    <th>Date d'échéance</th>
+                    <th>Mode de réglement</th>
+                    <th>N° de TVA intracom</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>num</td>
+                    <td>date</td>
+                    <td>code</td>
+                    <td>echeance</td>
+                    <td>reglement</td>
+                    <td>n° tva</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div  style='font-size: 13px; margin-left: 20%'> Date de livraison :  /  / </div> 
+        <br>
+
+        <table class="table table-sm" style="width:600px; margin-left: 30%">
+            <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>Description</th>
+                    <th>Quantité</th>
+                    <th>Prix Unitaire HT</th>
+                    <th>Montant HT</th>
+                    <th>TVA</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>code</td>
+                    <td>blablabla</td>
+                    <td>435</td>
+                    <td>12€</td>
+                    <td>122€</td>
+                    <td>25€</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="font-size: 13px; margin-left: 20%">
+            Récapitulatif des échéances :
+        </div>
+        <br>
+
+        <table class="table table-sm" style="width:600px; margin-left: 30%">
+            <thead >
+                <tr >
+                    <th>Date d'échéance</th>
+                    <th>Mode de paiement</th>
+                    <th>Montant de l'échéance</th>
+                    <th>Solde dû</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr >
+                    <td>échéance</td>
+                    <td>paiement</td>
+                    <td>montant</td>
+                    <td>solde dû</td>
+
+                </tr>
+            </tbody>
+        </table>
+
+        <br>
+
+        <div style='margin-left:20%; font-size:13px;'>  
+        Escompte pour règlement anticipé : % <br>
+            <br>
+        En cas de retard de paiement, une pénalité égale à 3 fois le taux d'intérêt légal sera exigible (Décret 2009-138 du 9 février 2009).<br>
+        Pour les professionnels, une indemnité minimum forfaitaire de 40€ pour frais de recouvrement sera exigible (Décret 2012-1115 du 9 octobre 2012).
+        </div> 
+        <br> <br>
+        <div>
+            <table class="table table-sm" style="width:400px; margin-left: 20%" align='left'>
+                <thead>
+                    <tr>
+                        <th>Taux</th>
+                        <th>Base HT</th>
+                        <th>Montant TVA</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>chiffre</td>
+                        <td>chiffre</td>
+                        <td>chiffre</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="table table-sm" style="width:130px; margin-right: 40%" align='right'>
+                <thead>
+                    <tr>
+                        <th>Total HT</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody >
+                    <tr >
+                        <td>Remise</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Total HT Remisé</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Port HT</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Total HT Net</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Total TVA</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Total TTC</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Acomptes</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Net à payer</td>
+                        <td></td>
+                    </tr>
+                    
+                </tbody>
+            </table> 
+        </div>
+        <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>  
+        <div class="row" style="margin-left: 40%"> 
+            <div style="padding-right:8px ; margin-left:1.5%"><button (click)='saveContact()' class="btn btn-primary">Envoyer</button>
+             <a  style="color:white; margin-left: 2%" class="btn btn-primary" (click)='onBack()' role="button">Annuler</a></div>
+       </div>
+
+    </div>
+
+
+       
+
+</div>
