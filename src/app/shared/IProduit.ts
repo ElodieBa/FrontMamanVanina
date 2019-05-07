@@ -1,3 +1,4 @@
+
 export interface Produit {
 
     produitId : number;

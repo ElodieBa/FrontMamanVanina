@@ -1,3 +1,4 @@
+
 import { Produit } from './IProduit';
 
 
@@ -12,7 +13,7 @@ export interface Commande {
     commandeFaconnier : string;
     commandeSociete : string;
     commandeReceptionneur : string;
-
+    date: String;
     commandeFabricant : string;
     commandeModele : string;
     

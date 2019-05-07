@@ -2,9 +2,11 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  template: `<app-commande-list></app-commande-list>`,
+  templateUrl : './menu/menu.component.html',    
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'AngularMamanVanina';
 }
+
+
