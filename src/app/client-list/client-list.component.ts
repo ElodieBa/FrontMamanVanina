@@ -52,7 +52,9 @@ export class ClientListComponent implements OnInit {
       data => this.ngOnInit()
     );
   };
-ModifClient(id : number): void {};
+ModifClient(id : number): void {
+  this.router.navigate(['/modifClient/',id]);
+};
 detailClient(id : number): void {
   this.router.navigate(['/detailClient/',id]);
 }

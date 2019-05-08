@@ -7,33 +7,33 @@
     <div class="panel-body">
   
 
-      <td>FABRICANT :</td><input type = "text" [(ngModel)]='commande.fabricant'>{{commande.fabricant}}
-      <td>MODELE :</td><input type = "text" [(ngModel)]='commande.modele' >{{commande.modele}}
-      <td>DATE :</td><input type = "text" [(ngModel)]='commande.date' >{{commande.date}}
+      <td>FABRICANT :</td><input type = "text" [(ngModel)]='commande.fabricant'>
+      <td>MODELE :</td><input type = "text" [(ngModel)]='commande.modele' >
+      <td>DATE :</td><input type = "date" [(ngModel)]='commande.date' >{{commande.date}}
   
 
       <div class="row">
           <div class="form-check">
               <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" [(ngModel)]='commande.coupeEnBout'>
-              <label class="form-check-label" for="defaultCheck1"> COUPE EN BOUT </label>{{commande.coupeEnBout}}
+              <label class="form-check-label" for="defaultCheck1"> COUPE EN BOUT </label>
           </div>
           <div class="form-check">
               <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" [(ngModel)]='commande.thermo'>
-              <label class="form-check-label" for="defaultCheck1"> THERMO</label>{{commande.thermo}}
+              <label class="form-check-label" for="defaultCheck1"> THERMO</label>
            </div>
           <div class="form-check">
               <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" [(ngModel)]='commande.empdbl'>
-              <label class="form-check-label" for="defaultCheck1">EMP/DBL</label>{{commande.empdbl}}
+              <label class="form-check-label" for="defaultCheck1">EMP/DBL</label>
           </div>
       </div>
       <table>
           <tr>
-            <td>THERMO :</td><input type = "text" [(ngModel)]='commande.thermoType'>{{commande.thermoType}}
+            <td>THERMO :</td><input type = "text" [(ngModel)]='commande.thermoType'>
           </tr>
           <tr>
-            <td>FACONNIER :</td><input type = "text" [(ngModel)]='commande.faconnier'>{{commande.faconnier}}
-            <td>SOCIETE :</td><input type = "text" [(ngModel)]='commande.societe'>{{commande.societe}}
-            <td>RECEPTIONNEUR :</td><input type = "text" [(ngModel)]='commande.receptionneur'>{{commande.receptionneur}}
+            <td>FACONNIER :</td><input type = "text" [(ngModel)]='commande.faconnier'>
+            <td>SOCIETE :</td><input type = "text" [(ngModel)]='commande.societe'>
+            <td>RECEPTIONNEUR :</td><input type = "text" [(ngModel)]='commande.receptionneur'>
           </tr>
         </table>
   
@@ -91,7 +91,7 @@
   
 
   
-      <button (click)='EnregistreCommande()' class="btn btn-primary">Ajouter</button>
+      <button (click)='EnregistreCommande()' class="btn btn-primary">Modifier</button>
     </div>
           
     

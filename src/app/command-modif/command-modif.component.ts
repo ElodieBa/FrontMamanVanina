@@ -33,6 +33,7 @@ export class CommandModifComponent implements OnInit {
         data => this.commande = data
     );
   }
+  
   EnregistreCommande(): void {
     this.ordreService.ajouterCommande(this.commande).subscribe(
       data => this.ngOnInit()

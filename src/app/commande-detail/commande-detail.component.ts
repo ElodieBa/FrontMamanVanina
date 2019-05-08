@@ -37,7 +37,7 @@ getCommandeById(id : number) {
   );
 }
   onBack(): void {
-    this.router.navigate(['accueil']);
+    this.router.navigate(['commandes']);
 }
 
 }

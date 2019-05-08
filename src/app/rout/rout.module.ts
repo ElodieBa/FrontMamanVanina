@@ -16,6 +16,7 @@ import { FactureDetailComponent } from '../facture-list/facture-detail.component
 import { FormFactureComponent } from '../form-facture/form-facture.component';
 import { CommandeListElodieComponent } from '../commande-list-elodie/commande-list-elodie.component';
 import { CommandModifComponent } from '../command-modif/command-modif.component';
+import { ClientModifComponent } from '../client-modif/client-modif.component';
 const appRoutes: Routes = [
   { path : 'accueil', component : AccueilComponent },
 
@@ -27,6 +28,8 @@ const appRoutes: Routes = [
   { path : 'Clients', component : ClientListComponent},
   { path : 'Ajoutclients', component : AjoutClientComponent},
   { path : 'detailClient/:id', component: DetailClientComponent},
+  { path : 'modifClient/:id', component: ClientModifComponent},
+  
 
   { path : 'Factures', component : FactureListComponent},
   { path : 'AjoutFactures', component : FormFactureComponent},

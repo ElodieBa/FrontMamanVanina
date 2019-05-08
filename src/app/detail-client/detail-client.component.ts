@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Client } from '../shared/IClient';
 import { ClientServiceService } from '../client-service.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-detail-client',
@@ -14,15 +14,28 @@ export class DetailClientComponent implements OnInit {
   client : Client;
   idClient: number;
   constructor(private clientService : ClientServiceService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private router: Router
+    ) { }
 
   ngOnInit() {
-    this.idClient=this.route.snapshot.params['idClient'];
-    this.clientService.getClient(this.idClient).subscribe(
-      data => this.client = data
-    );
-  }
+    let param = this.route.snapshot.params['id'];
+    if(param) {
+        this.idClient = param;
+        this.getCommandeById(this.idClient);
+    }
+}
 
-  
+getCommandeById(id : number) {
+  this.clientService.getClient(id).subscribe(
+      data => this.client = data
+  );
+}
+ 
+
+
+  onBack(): void {
+    this.router.navigate(['clients']);
+}
 
 }
