@@ -35,6 +35,13 @@ export class FactureService {
         ); 
     }
 
+    getTotalHTRemise(id:number):Observable<number> {
+        facture:object = this.http.get<Facture>('http://localhost:8080/facture/'+id).pipe(
+            catchError(this.handleError) 
+         );
+         return this.http.post<number>('http://localhost:8080/facture/totalhtremise')
+    }
+
     
     private handleError(error: HttpErrorResponse) {
         if (error.error instanceof ErrorEvent) {

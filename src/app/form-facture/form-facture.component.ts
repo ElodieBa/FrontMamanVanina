@@ -31,6 +31,9 @@ export class FormFactureComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
+    this.factureService.saveFacture(this.facture).subscribe(
+      data => this.router.navigate(['/factures'])
+    );
   }
 
   saveFacture() : void {
