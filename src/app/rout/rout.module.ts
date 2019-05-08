@@ -15,12 +15,14 @@ import { FactureListComponent } from '../facture-list/facture-list.component';
 import { FactureDetailComponent } from '../facture-list/facture-detail.component';
 import { FormFactureComponent } from '../form-facture/form-facture.component';
 import { CommandeListElodieComponent } from '../commande-list-elodie/commande-list-elodie.component';
+import { CommandModifComponent } from '../command-modif/command-modif.component';
 const appRoutes: Routes = [
   { path : 'accueil', component : AccueilComponent },
 
   { path : 'commandes', component : CommandeListComponent },
   { path : 'AjoutCommande', component : CommandeListElodieComponent },
   { path : 'detailCommande/:id', component : CommandeDetailComponent },
+  { path : 'modifCommande/:id', component : CommandModifComponent },
 
   { path : 'Clients', component : ClientListComponent},
   { path : 'Ajoutclients', component : AjoutClientComponent},

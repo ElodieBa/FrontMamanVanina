@@ -23,4 +23,6 @@ export class DetailClientComponent implements OnInit {
     );
   }
 
+  
+
 }

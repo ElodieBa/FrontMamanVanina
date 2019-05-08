@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IClient } from './client';
 import { ClientServiceService } from '../client-service.service';
+import { Router } from '@angular/router';
 import { Client } from '../shared/IClient';
 
 @Component({
@@ -25,13 +26,11 @@ export class ClientListComponent implements OnInit {
 
 
 
-  constructor(private clientService : ClientServiceService) {
-    this.filteredClients = this.clients;
+  constructor(private clientService : ClientServiceService, private router: Router) {
     this.filter = '';
   }
 
   ngOnInit() {
-    console.log('Person : ')
     this.clientService.getAllClients().subscribe(
       data => {
         this.clients = data;
@@ -48,6 +47,15 @@ export class ClientListComponent implements OnInit {
       this.filteredClients = this._filter ? this.performFilter(this._filter) : this.clients;
   }
 
+  deleteClient(id : number): void {
+    this.clientService.deleteClient(id).subscribe(
+      data => this.ngOnInit()
+    );
+  };
+ModifClient(id : number): void {};
+detailClient(id : number): void {
+  this.router.navigate(['/detailClient/',id]);
+}
 
 
 }

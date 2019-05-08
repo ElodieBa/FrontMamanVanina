@@ -32,6 +32,7 @@ import { FactureService } from './facture-list/facture.service';
 
 import { ClientListComponent} from './client-list/client-list.component';
 import { AuthentificationComponent } from './authentification/authentification.component';
+import { CommandModifComponent } from './command-modif/command-modif.component';
 
 
 
@@ -52,7 +53,8 @@ import { AuthentificationComponent } from './authentification/authentification.c
     FactureListComponent,
     FactureDetailComponent,
     ClientListComponent,
-    AuthentificationComponent
+    AuthentificationComponent,
+    CommandModifComponent
     ],
 
   imports: [

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Produit } from '../shared/IProduit';
 import { OrdreServiceService } from '../ordre-service.service';
 import { Commande } from '../shared/ICommande';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-commande-list',
@@ -27,7 +28,10 @@ export class CommandeListElodieComponent implements OnInit {
 
   };
 
-  constructor(private ordreService : OrdreServiceService) { }
+
+  constructor(private ordreService : OrdreServiceService,
+    private router: Router
+    ) { }
 
   ngOnInit() {
   }
@@ -41,6 +45,9 @@ export class CommandeListElodieComponent implements OnInit {
     this.ordreService.ajouterCommande(this.commande).subscribe(
       data => this.ngOnInit()
     );
+    this.router.navigate(['/commandes/']);
   }
+
+
 
   }
