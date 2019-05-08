@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Commande } from '../shared/ICommande';
 import { Produit } from '../shared/IProduit';
 import { Router, ActivatedRoute } from '@angular/router';
+import { OrdreServiceService } from '../ordre-service.service';
 
 @Component({
   selector: 'app-commande-detail',
@@ -18,16 +19,25 @@ export class CommandeDetailComponent implements OnInit {
 
  
 
-  constructor(private route: ActivatedRoute,private router: Router) { 
-    
+  constructor(private ordreService: OrdreServiceService, 
+    private route: ActivatedRoute,
+    private router: Router) { }
 
-  }
+  ngOnInit(): void {
+    let param = this.route.snapshot.params['id'];
+    if(param) {
+        this.id = param;
+        this.getCommandeById(this.id);
+    }
+}
 
-  ngOnInit() {
-    this.id = this.route.snapshot.params['id'];
-  }
+getCommandeById(id : number) {
+  this.ordreService.getCommande(id).subscribe(
+      data => this.commande = data
+  );
+}
   onBack(): void {
-    this.router.navigate(['/products']);
+    this.router.navigate(['accueil']);
 }
 
 }
