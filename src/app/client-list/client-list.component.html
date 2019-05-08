@@ -24,6 +24,7 @@
         <table class="table" >
           <thead>
             <tr>
+                <th>Code Client</th>
               <th>Nom</th>
               <th>Prenom</th>
               <th>Date</th>
@@ -35,20 +36,21 @@
           </thead>
           <tbody >
             <tr *ngFor='let client of filteredClients' >
-              <td>{{client.clientName}}</td>
-              <td>{{client.clientPrenom}}</td>
-              <td>{{client.clientDn}}</td>
-              <td>{{client.clientTel}}</td>
-              <td>{{client.clientMail}}</td>
-              <td>{{client.clientNomSociete}}</td>
+              <td>{{client.idClient}}</td>
+              <td>{{client.nomClient}}</td>
+              <td>{{client.prenomClient}}</td>
+              <td>{{client.dateNaissance}}</td>
+              <td>{{client.numTel}}</td>
+              <td>{{client.mail}}</td>
+              <td>{{client.nomSociete}}</td>
               <td >
-                <a href="#">
+                <a class="clickable" (click)='detailClient(client.idClient)'>
                   <span class="glyphicon glyphicon-eye-open"></span>
                 </a>
-                <a href="#">
+                <a class="clickable" (click)='ModifClient(client.idClient)'>
                   <span class="glyphicon glyphicon-pencil"></span>
                 </a>
-                <a href="#">
+                <a class="clickable" (click)='deleteClient(client.idClient)'>
                     <span class="glyphicon glyphicon-trash"></span>
                   </a>
               </td>

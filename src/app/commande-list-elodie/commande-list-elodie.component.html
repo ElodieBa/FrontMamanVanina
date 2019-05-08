@@ -6,10 +6,14 @@
   
   <div class="panel-body">
 
-    <td>FABRICANT :</td><input type = "text" [(ngModel)]='commande.fabricant'>
+    <td>FABRICANT :</td><input type = "text" [(ngModel)]='commande.fabricant'>{{commande.fabricant}}
     <td>MODELE :</td><input type = "text" [(ngModel)]='commande.modele'>
-    <td>DATE :</td><input type = "text" [(ngModel)]='commande.date'>
+    <td>DATE :</td><input type = "date" [(ngModel)]='commande.date'>
 
+
+
+
+      <div class = "container">
       <table class="table-responsive">
           <thead>
             <tr>
@@ -56,6 +60,9 @@
     <button (click)='ajouterProduit()' class="btn btn-primary">Ajouter</button>
     
 
+</div>
+
+
 <div class="row">
     <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" [(ngModel)]='commande.coupeEnBout'>
@@ -87,8 +94,8 @@
         <td>RECEPTIONNEUR :</td><input type = "text" [(ngModel)]='commande.receptionneur'>
       </tr>
     </table>
-
     <button (click)='ajouterCommande()' class="btn btn-primary">Ajouter</button>
+
   </div>
         
   

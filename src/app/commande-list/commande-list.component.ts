@@ -48,8 +48,14 @@ export class CommandeListComponent implements OnInit {
     return this.commands.filter((commande : Commande) => 
     commande.societe.toLocaleLowerCase().indexOf(filterBy) !== -1);
 }
-deleteCommande(id : number): void {};
-ModifCommande(id : number): void {};
+deleteCommande(id : number): void {
+  this.ordreService.deleteCommande(id).subscribe(
+    data => this.ngOnInit()
+  );
+};
+ModifCommande(id : number): void {
+  this.router.navigate(['/modifCommande/',id]);
+};
 detailCommande(id : number): void {
   this.router.navigate(['/detailCommande/',id]);
 }
