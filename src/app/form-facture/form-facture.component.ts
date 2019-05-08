@@ -12,8 +12,6 @@ export class FormFactureComponent implements OnInit {
   ngOnInit() {
   }
 
-  onBack(): void {
-    this.router.navigate(['/products']);
-}
+ 
 
 }
