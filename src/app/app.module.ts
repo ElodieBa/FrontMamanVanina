@@ -22,16 +22,17 @@ import { RoutModule } from './rout/rout.module';
 import { MenuComponent } from './menu/menu.component';
 import { AccueilComponent } from './accueil/accueil.component';
 
-import { AdresseclientComponent } from './adresseclient/adresseclient.component';
-import { AdresseVaninaComponent } from './adresse-vanina/adresse-vanina.component';
+import { AdresseclientComponent } from './form-facture/adresseclient/adresseclient.component';
+import { AdresseVaninaComponent } from './form-facture/adresse-vanina/adresse-vanina.component';
 import { FormFactureComponent } from './form-facture/form-facture.component';
 
 import { FactureListComponent } from './facture-list/facture-list.component';
 import { FactureDetailComponent } from './facture-list/facture-detail.component';
-import { FactureService } from './facture-list/facture.service';
+
 
 import { ClientListComponent} from './client-list/client-list.component';
 import { AuthentificationComponent } from './authentification/authentification.component';
+import { FactureService } from './facture-service.service';
 
 
 
