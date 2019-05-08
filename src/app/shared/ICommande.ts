@@ -4,18 +4,18 @@ import { Produit } from './IProduit';
 
 export interface Commande {
 
-    commandeId : number;
+    id : number;
     
-    commandeCoupeEnBout : boolean;
-    commandeThermo : boolean;
-    commandeEmplDbl : boolean;
-    commandeThermoType : string;
-    commandeFaconnier : string;
-    commandeSociete : string;
-    commandeReceptionneur : string;
+    coupeEnBout : boolean;
+    thermo : boolean;
+    emplDbl : boolean;
+    thermoType : string;
+    faconnier : string;
+    societe : string;
+    receptionneur : string;
     date: String;
-    commandeFabricant : string;
-    commandeModele : string;   
-    ListeProduits : Produit[];
+    fabricant : string;
+    modele : string;   
+    ListProduits : Produit[];
 
 }

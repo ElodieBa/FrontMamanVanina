@@ -7,7 +7,7 @@
           <div class="col-md-8"><h2 style="margin-left:15%">Informations commande</h2>
              <h4> <div class="row">
                   <div class="col-md-4">Référence : </div>
-                  <div class="col-md-8">{{commande.commandeId}}</div>
+                  <div class="col-md-8">{{commande.id}}</div>
               </div>
               <div class="row">
                 <div class="col-md-4">Date : </div>
@@ -15,40 +15,40 @@
             </div>
             <div class="row">
                 <div class="col-md-4">Societe : </div>
-                <div class="col-md-8">{{commande.commandeSociete}}</div>
+                <div class="col-md-8">{{commande.societe}}</div>
             </div>
 
               <div class="row">
                   <div class="col-md-4">Modele : </div>
-                  <div class="col-md-8">{{commande.commandeModele}}</div>
+                  <div class="col-md-8">{{commande.modele}}</div>
               </div>
               <div class="row">
                 <div class="col-md-4">CoupeEnBout : </div>
-                <div class="col-md-8">{{commande.commandeCoupeEnBout}}</div>
+                <div class="col-md-8">{{commande.coupeEnBout}}</div>
             </div>
             <div class="row">
                 <div class="col-md-4">Thermo : </div>
-                <div class="col-md-8">{{commande.commandeThermo}}</div>
+                <div class="col-md-8">{{commande.thermo}}</div>
             </div>
             <div class="row">
                 <div class="col-md-4">Empdbl : </div>
-                <div class="col-md-8">{{commande.commandeEmplDbl}}</div>
+                <div class="col-md-8">{{commande.emplDbl}}</div>
             </div>
             <div class="row">
                 <div class="col-md-4">ThermoType : </div>
-                <div class="col-md-8">{{commande.commandeThermoType}}</div>
+                <div class="col-md-8">{{commande.thermoType}}</div>
             </div>
             <div class="row">
                 <div class="col-md-4">Faconnier : </div>
-                <div class="col-md-8">{{commande.commandeFaconnier}}</div>
+                <div class="col-md-8">{{commande.aconnier}}</div>
             </div>
             <div class="row">
                 <div class="col-md-4">Receptionneur : </div>
-                <div class="col-md-8">{{commande.commandeReceptionneur}}</div>
+                <div class="col-md-8">{{commande.receptionneur}}</div>
             </div>
             <div class="row">
                 <div class="col-md-4">Fabricant : </div>
-                <div class="col-md-8">{{commande.commandeFabricant}}</div>
+                <div class="col-md-8">{{commande.fabricant}}</div>
             </div>
         </h4>
         </div>
@@ -64,11 +64,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor = 'let commande of commande'>
-                            <td>{{commande.produits.produitCouleur}}</td>
-                            <td>{{commande.produits.produitTaille}}</td>
-                            <td>{{commande.produits.quantiteProduit}}</td>
-                            <td>{{commande.produits.produitPrix}}</td>
+                        <tr>
       
                         </tr>
                     </tbody>
@@ -78,7 +74,7 @@
       
   </div>
   <div class="panel-footer">
-      <a class="btn btn-primary"  role="button">
+      <a class="btn btn-primary" (click)='onBack()' role="button">
           <i class="glyphicon glyphicon-chevron-left"></i>
           Back
       </a>

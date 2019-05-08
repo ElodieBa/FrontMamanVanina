@@ -1,11 +1,11 @@
 
 export interface Produit {
 
-    produitId : number;
+    idProduit : number;
 
     quantiteProduit : number ;
-    produitTaille : string;
-    produitCouleur : string;
-	produitPrix : number;
+    taille : string;
+    couleur : string;
+	prix : number;
 
 }
