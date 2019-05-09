@@ -1,11 +1,16 @@
-export interface IFacture {
-    factureId: number; 
-    numero: number; 
-    code: string; 
-    codeClient: string; 
-    date: string; 
-    societe: string; 
-    montant: number; 
-    statut: string; 
-    options: string; 
-}
+export interface Facture {
+    numCommande: number; 
+    codeClient: number; 
+    numTVA: number; 
+    dateLivraison: Date; 
+    codeProduit: number; 
+    description: string; 
+    quantite: number; 
+    prixUnitaireHT: number; 
+    tva: number; 
+    dateEcheance: Date;
+    remise: number; 
+    accomptes: number;  
+    ordredecommande: string; 
+
+  }
