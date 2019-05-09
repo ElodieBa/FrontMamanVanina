@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { IFacture } from './facture';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Facture } from './facture';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FactureService } from './facture.service'; 
 
 @Component({
@@ -9,36 +9,34 @@ import { FactureService } from './facture.service';
     styleUrls: ['./facture-detail.component.css']
   })
 
-  export class FactureDetailComponent {
+  export class FactureDetailComponent implements OnInit{
 
     pageTitle = 'Facture Detail'
-    facture: IFacture | undefined; 
-    numero: number; 
+    facture: Facture; 
+    numCommande: number; 
 
-    constructor(//private router: Router, 
-       // private route : ActivatedRoute, 
-        private factureService : FactureService){
+    constructor(private route : ActivatedRoute, private factureService : FactureService, private router : Router){
 
     }
 
-      ngOnInit(): void {
-     //   let param = this.route.snapshot.params['id'];
-     //  if(param) {
-     //      this.id = param;
-     //       this.getFactures(this.id);
-     //  }
+    onBack(): void{
+      this.router.navigate(['factures']);
+    }
+    factureById(id: number){
+      this.factureService.getFacture(this.numCommande).subscribe(
+        data => this.facture = data
+      );
+
     }
 
-  //  getFactures(factureId : number) {
-     //   this.factureService.getFactureById(id).subscribe(
-      //      data => this.facture = data
-      //  );
- //   }
-  //  onBack(): void {
-    //    this.router.navigate(['/factures']);
-  //  }
+    ngOnInit () {
+      let param = this.route.snapshot.params['id'];
+        if (param) {
+          this.numCommande= param; 
+          this.factureById(this.numCommande);
+    }
+  }
 
-  //  onRatingClicked(message: string) {
-    //    this.pageTitle = 'Facture Detail : '+message;
- //   }
+    
+
   }
