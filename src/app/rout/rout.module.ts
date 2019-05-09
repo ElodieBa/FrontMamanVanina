@@ -18,6 +18,7 @@ import { CommandeListElodieComponent } from '../commande-list-elodie/commande-li
 import { CommandModifComponent } from '../command-modif/command-modif.component';
 import { ClientModifComponent } from '../client-modif/client-modif.component';
 import { FactureModifComponent } from '../facture-modif/facture-modif.component';
+import { AuthentificationComponent } from '../authentification/authentification.component';
 const appRoutes: Routes = [
   { path : 'accueil', component : AccueilComponent },
 
@@ -36,6 +37,9 @@ const appRoutes: Routes = [
   { path : 'AjoutFactures', component : FormFactureComponent},
   { path : 'detailFactures/:id', component: FactureDetailComponent},
   { path : 'modifFacture/:id', component : FactureModifComponent },
+
+  { path : 'authentif', component : AuthentificationComponent },
+
 
   { path : '', redirectTo : 'accueil', pathMatch : 'full'}
 ];
