@@ -1,175 +1,178 @@
 <div class="panel panel-primary">
-    <div class="panel-body">
-        <div style="margin-left: 25%; margin-bottom: -80px">
-            <app-adresse-vanina style="margin-left: 15%"></app-adresse-vanina>
-        </div>
-        <div style="margin-left: 55%; margin-bottom: 40px">
-            <app-adresseclient></app-adresseclient>
-        </div>
-            
+    <div class="panel-heading" style="text-align:center">
+        <h1>{{pageTitle}}</h1>
+    </div>
 
-        <div align='center'>
-        <h3>FACTURE</h3>
-        </div>
-
-        <br>
-        <br>
-        <form>
-            <table class="table table-sm" style="width:600px; margin-left: 30%">
-                <thead>
-                    <tr>
-                        <th>Numéro</th>
-                        <th>Date</th>
-                        <th>Code Client</th>
-                        <th>Date d'échéance</th>
-                        <th>Mode de réglement</th>
-                        <th>N° de TVA intracom</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>num auto généré</td>
-                        <td><input type="date" required="true"></td>
-                        <td>code pris depuis client</td>
-                        <td><input type="date" required="true"></td>
-                        <td>enum reglement attribut facture</td>
-                        <td><input type="text" required="true" placeholder="N° TVA"></td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <div  style='font-size: 13px; margin-left: 20%'> Date de livraison : <input type="date" required="true"></div> 
-            <br>
-
-            <table class="table table-sm" style="width:600px; margin-left: 30%">
-                <thead>
-                    <tr>
-                        <th>Code</th>
-                        <th>Description</th>
-                        <th>Quantité</th>
-                        <th>Prix Unitaire HT</th>
-                        <th>Montant HT</th>
-                        <th>TVA</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>code produit</td>
-                        <td>blablabla (attribut description dans produit ??)</td>
-                        <td>quantité attribut produit</td>
-                        <td>prix attribut produit</td>
-                        <td>prix * quantité</td>
-                        <td>taux tva*montant ht</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <div style="font-size: 13px; margin-left: 20%">
-                Récapitulatif des échéances :
+        <div class="panel-body">
+            <div style="margin-left: 25%; margin-bottom: -80px">
+                <app-adresse-vanina style="margin-left: 15%"></app-adresse-vanina>
             </div>
+            <div style="margin-left: 55%; margin-bottom: 40px">
+                <app-adresseclient></app-adresseclient>
+            </div>
+                
+    
+            <div align='center'>
+            <h3>FACTURE</h3>
+            </div>
+    
             <br>
-
-            <table class="table table-sm" style="width:600px; margin-left: 30%">
-                <thead >
-                    <tr >
-                        <th>Date d'échéance</th>
-                        <th>Mode de paiement</th>
-                        <th>Montant de l'échéance</th>
-                        <th>Solde dû</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr >
-                        <td><input type="date"></td>
-                        <td>enum attribut facture</td>
-                        <td><input type="text"> </td>
-                        <td>méthode facture</td>
-
-                    </tr>
-                </tbody>
-            </table>
-
             <br>
-
-            <div style='margin-left:20g%; font-size:13px;'>  
-            Escompte pour règlement anticipé : <input type="text"> % <br>
-                <br>
-            En cas de retard de paiement, une pénalité égale à 3 fois le taux d'intérêt légal sera exigible (Décret 2009-138 du 9 février 2009).<br>
-            Pour les professionnels, une indemnité minimum forfaitaire de 40€ pour frais de recouvrement sera exigible (Décret 2012-1115 du 9 octobre 2012).
-            </div> 
-            <br> <br>
-            <div>
-                <table class="table table-sm" style="width:400px; margin-left: 20%" align='left'>
+            <form>
+                <table class="table table-sm" style="width:600px; margin-left: 18%">
                     <thead>
                         <tr>
-                            <th>Taux</th>
-                            <th>Base HT</th>
-                            <th>Montant TVA</th>
-
+                            
+                            <th>Date</th>
+                            <th>Code Client</th>
+                            <th>Date d'échéance</th>
+                            <th>N° de TVA intracom</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><input type="text" required="true"></td>
-                            <td><input type="text" required="true"></td>
-                            <td><input type="text" required="true"></td>
+                            
+                            <td><input  name="nom" type="date" required="true"></td>
+                            <td>{{facture.ordrecommande.client.codeclient}}</td>
+                            <td><input [(ngModel)]='facture.date' name="date" type="date" required="true"></td>
+                            <td><input [(ngModel)]='facture.numTVA' name="numTVA" type="text" required="true" placeholder="N° TVA"></td>
                         </tr>
                     </tbody>
                 </table>
-
-                <table class="table table-sm" style="width:130px; margin-right: 40%" align='right'>
+    
+                <div  style='font-size: 13px; margin-left: 18%'> Date de livraison : <input [(ngModel)]='facture.dateLivraison' name="dateLivraison" type="date" required="true"></div> 
+                <br>
+    
+                <table class="table table-sm" style="width:600px; margin-left: 25%">
                     <thead>
                         <tr>
-                            <th>Total HT</th>
-                            <th></th>
+                            <th>Code</th>
+                            <th>Description</th>
+                            <th>Quantité</th>
+                            <th>Prix Unitaire HT</th>
+                            <th>Montant HT</th>
+                            <th>TVA</th>
                         </tr>
                     </thead>
-                    <tbody >
-                        <tr >
-                            <td>Remise</td>
-                            <td></td>
+                    <tbody>
+                        <tr *ngFor='let produit of produits'>
+                            <td>{{produit.codeproduit}}</td>
+                            <td>{{produit.description}}</td>
+                            <td>{{produit.quantite}}</td>
+                            <td>{{produit.prix}}</td>
+                            <td>{{produit.quantite}}*{{produit.prix}}</td>
+                            <td>{{produit.quantite}}*{{produit.prix}}*{{facture.tva}}</td>
                         </tr>
-                        <tr>
-                            <td>Total HT Remisé</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Port HT</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Total HT Net</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Total TVA</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Total TTC</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Acomptes</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Net à payer</td>
-                            <td></td>
-                        </tr>
-                        
                     </tbody>
-                </table> 
-            </div>
-            <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>  
-            <div class="row" style="margin-left: 40%"> 
-                <div style="padding-right:8px ; margin-left:1.5%"><button (click)='saveContact()' class="btn btn-primary">Envoyer</button>
-                <a  style="color:white; margin-left: 2%" class="btn btn-primary" (click)='onBack()' role="button">Annuler</a></div>
-            </div>
-        </form>
+                </table>
+    
+                <div style="font-size: 13px; margin-left: 18%">
+                    Récapitulatif des échéances :
+                </div>
+                <br>
+    
+                <table class="table table-sm" style="width:600px; margin-left: 25%">
+                    <thead >
+                        <tr >
+                            <th>Date d'échéance</th>
+                            <th>Mode de paiement</th>
+                            <th>Montant de l'échéance</th>
+                            <th>Solde dû</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr >
+                            <td><input [(ngModel)]='facture.dateEcheance' name="dateEcheance" type="date"></td>
+                            <td><input [(ngModel)]='facture.modeReglement' name="modeReglement" type="text" required="true"></td>
+                            <td><input [(ngModel)]='facture.montantEcheance' name="montantEcheance" type="text"> </td>
+                            <td>{{facture.Netapayer()}}</td>
+    
+                        </tr>
+                    </tbody>
+                </table>
+    
+                <br>
+    
+                <div style='margin-left:18%; font-size:13px;'>  
+                Escompte pour règlement anticipé : <input [(ngModel)]='facture.escompte' name="escompte" type="text"> % <br>
+                    <br>
+                En cas de retard de paiement, une pénalité égale à 3 fois le taux d'intérêt légal sera exigible (Décret 2009-138 du 9 février 2009).<br>
+                Pour les professionnels, une indemnité minimum forfaitaire de 40€ pour frais de recouvrement sera exigible (Décret 2012-1115 du 9 octobre 2012).
+                </div> 
+                <br> <br>
+                <div>
+                    <table class="table table-sm" style="width:400px; margin-left: 20%" align='left'>
+                        <thead>
+                            <tr>
+                                <th>Taux</th>
+                                <th>Base HT</th>
+                                <th>Montant TVA</th>
+    
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input [(ngModel)]='facture.tva' name="tva" type="text" required="true" style="width: 120px"></td>
+                                <td><output ></td>
+                                <td>tva*baseHT</td>
+                            </tr>
+                        </tbody>
+                    </table>
+    
+                    <table class="table table-sm" style="width:130px; margin-right: 22%" align='right'>
+                        <thead>
+                            <tr>
+                                <th>Total HT</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody >
+                            <tr >
+                                <td>Remise</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Total HT Remisé</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Port HT</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Total HT Net</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Total TVA</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Total TTC</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Acomptes</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Net à payer</td>
+                                <td></td>
+                            </tr>
+                            
+                        </tbody>
+                    </table> 
+                </div>
+                <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>  
+                <div class="row" style="margin-left: 40%"> 
+                    <div style="padding-right:8px ; margin-left:1.5%"><button (click)='saveFacture()' class="btn btn-primary">Envoyer</button>
+                    <!-- <a  style="color:white; margin-left: 2%" class="btn btn-primary" (click)='onBack()' role="button">Annuler</a> --> 
+                </div>
+                </div>
+            </form>
+        </div>
+    
+    
+           
+    
     </div>
-
-
-       
-
-</div>
