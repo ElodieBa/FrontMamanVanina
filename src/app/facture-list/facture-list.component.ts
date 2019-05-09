@@ -59,6 +59,7 @@ export class FactureListComponent implements OnInit {
 
   ngOnInit(){
     this.factureService.getAllFactures().subscribe(data => {
+      console.log(data);
       this.factures = data;
       this.filteredFactures = this.factures;
     });

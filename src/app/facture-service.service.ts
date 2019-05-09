@@ -30,7 +30,7 @@ export class FactureService {
     }
 
     deleteFacture(id: number): Observable<{}> {
-        return this.http.delete('http://localhost:8080/facture/delete'+id).pipe(
+        return this.http.delete('http://localhost:8080/facture/delete/'+id).pipe(
             catchError(this.handleError)
         ); 
     }
