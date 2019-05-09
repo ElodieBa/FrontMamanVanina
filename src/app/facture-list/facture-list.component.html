@@ -23,28 +23,28 @@
          <thead>
             <tr>
               <th>Numéro</th>
-              <th>Code</th>
               <th>Code client</th>
               <th>Date</th>
+              <th>Mode de reglement</th>
               <th>Options</th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor='let facture of filteredFactures'>
               <td>{{facture.numCommande}}</td>
-              <td>{{facture.codeProduit | lowercase }}</td>
-              <td>{{facture.codeClient}}</td>
+              <td></td>
               <td>{{facture.dateEcheance}}</td>
+              <td>{{facture.modeReglement}}</td>
               <td>
-                  <a href="#">
+                  
                       <a class="clickable" (click)='detailFacture(facture.numCommande)'><span class="glyphicon glyphicon-eye-open"></span></a>
-                    </a>
-                   <a href="#">
+                   
+                   <a class="clickable" (click)='modifFacture(facture.numCommande)'>
                         <span class="glyphicon glyphicon-pencil"></span>
                       </a>
-                  <a href="#">
+                
                       <a class="clickable" (click)='deleteFacture(facture.numCommande)'><span class="glyphicon glyphicon-trash"></span></a>
-                      </a>
+                
                   <a href="#">
                       <span class="glyphicon glyphicon-cloud-download"></span>
                    </a>

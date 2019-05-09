@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Facture } from './facture';
+
 import { ActivatedRoute, Router } from '@angular/router';
-import { FactureService } from './facture.service'; 
+import { FactureService } from '../facture-service.service';
+import { Facture } from '../shared/IFacture';
+
 
 @Component({
     selector: 'app-facture-detail',
@@ -20,7 +22,7 @@ import { FactureService } from './facture.service';
     }
 
     onBack(): void{
-      this.router.navigate(['factures']);
+      this.router.navigate(['Factures']);
     }
     factureById(id: number){
       this.factureService.getFacture(this.numCommande).subscribe(

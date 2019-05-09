@@ -25,16 +25,14 @@
                             
                             <th>Date</th>
                             <th>Code Client</th>
-                            <th>Date d'échéance</th>
                             <th>N° de TVA intracom</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             
-                            <td><input  name="nom" type="date" required="true"></td>
-                            <td>{{facture.ordrecommande.client.codeclient}}</td>
                             <td><input [(ngModel)]='facture.date' name="date" type="date" required="true"></td>
+                            <td></td>
                             <td><input [(ngModel)]='facture.numTVA' name="numTVA" type="text" required="true" placeholder="N° TVA"></td>
                         </tr>
                     </tbody>
@@ -85,7 +83,7 @@
                             <td><input [(ngModel)]='facture.dateEcheance' name="dateEcheance" type="date"></td>
                             <td><input [(ngModel)]='facture.modeReglement' name="modeReglement" type="text" required="true"></td>
                             <td><input [(ngModel)]='facture.montantEcheance' name="montantEcheance" type="text"> </td>
-                            <td>{{facture.Netapayer()}}</td>
+                            <td></td>
     
                         </tr>
                     </tbody>
@@ -113,8 +111,8 @@
                         <tbody>
                             <tr>
                                 <td><input [(ngModel)]='facture.tva' name="tva" type="text" required="true" style="width: 120px"></td>
-                                <td><output ></td>
-                                <td>tva*baseHT</td>
+                                <td></td>
+                                <td></td>
                             </tr>
                         </tbody>
                     </table>
@@ -166,7 +164,7 @@
                 <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>  
                 <div class="row" style="margin-left: 40%"> 
                     <div style="padding-right:8px ; margin-left:1.5%"><button (click)='saveFacture()' class="btn btn-primary">Envoyer</button>
-                    <!-- <a  style="color:white; margin-left: 2%" class="btn btn-primary" (click)='onBack()' role="button">Annuler</a> --> 
+                    <a  style="color:white; margin-left: 2%" class="btn btn-primary" (click)='onBack()' role="button">Annuler</a>
                 </div>
                 </div>
             </form>

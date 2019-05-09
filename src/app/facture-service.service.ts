@@ -11,7 +11,7 @@ export class FactureService {
     private factureApiUrl = './api/factures/factures.json';
 
     getAllFactures() : Observable<Facture[]>{
-        return this.http.get<Facture[]>('http://lolcalhost:8080/facture').pipe(
+        return this.http.get<Facture[]>('http://localhost:8080/factures').pipe(
             catchError(this.handleError)
         );
     }
@@ -35,13 +35,7 @@ export class FactureService {
         ); 
     }
 
-    getTotalHTRemise(id:number):Observable<number> {
-        facture:object = this.http.get<Facture>('http://localhost:8080/facture/'+id).pipe(
-            catchError(this.handleError) 
-         );
-         return this.http.post<number>('http://localhost:8080/facture/totalhtremise')
-    }
-
+ 
     
     private handleError(error: HttpErrorResponse) {
         if (error.error instanceof ErrorEvent) {
