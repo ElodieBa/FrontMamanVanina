@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Commande } from '../shared/ICommande';
 import { Produit } from '../shared/IProduit';
 import { Router } from '@angular/router';
+import { OrdreServiceService } from '../ordre-service.service';
 
 @Component({
   selector: 'app-commande-list',
@@ -20,69 +21,22 @@ export class CommandeListComponent implements OnInit {
         this._filter = value;
         
     }
-    produits:Produit []=[
-      {
-      "produitId":1,
-      "produitTaille":"38/40",
-      "produitCouleur":"rose",
-      "produitPrix":25,
-      "quantiteProduit":5,
-      }
-      ];
-      produits2:Produit []=[      {
-        "produitId":2,
-        "produitTaille":"38/40",
-        "produitCouleur":"vert",
-        
-       "produitPrix":25,
-         "quantiteProduit":5,
-        }];
+    produits:Produit [];
  
     filteredCommands : Commande[];
-    commands : Commande[] = [{
-
-      "commandeId": 1,
-      "commandeCoupeEnBout": true,
-      "commandeThermo" : true,
-      "commandeEmplDbl": true,
-      "commandeThermoType": "string",
-      "commandeFaconnier":"string",
-      "commandeSociete": "STTtring",
-      "commandeReceptionneur": "string",
-      "commandeFabricant": "string",
-
-      "commandeModele": "string",
-
-      "date": "31/05/2019",
-      "ListeProduits":this.produits,
-    },
-    {
-
-      "commandeId": 2,
-      "commandeCoupeEnBout": true,
-      "commandeThermo" : true,
-      "commandeEmplDbl": true,
-      "commandeThermoType": "string",
-      "commandeFaconnier":"string",
-      "commandeSociete": "abb",
-      "commandeReceptionneur": "string",
-  
-      "commandeFabricant": "string",
-
-      "commandeModele": "string",
-
-      "date": "31/05/2019",
-      "ListeProduits":this.produits2,
-    }];
+    commands : Commande[];
 
 
-  constructor(private router: Router) {
-    this.filteredCommands = this.commands;
+  constructor(private ordreService: OrdreServiceService, private router: Router) {
+    
     this.filter = '';
    }
 
   ngOnInit() {
-
+    this.ordreService.getAllCommandes().subscribe( data=> 
+      {this.commands = data
+        this.filteredCommands = this.commands},
+        error => { console.log(error) });
   }
   search (value : string) {
     this.filteredCommands = this._filter ? this.performFilter(this._filter) : this.commands;
@@ -92,10 +46,16 @@ export class CommandeListComponent implements OnInit {
   performFilter(filterBy: string) : Commande[] {
     filterBy = filterBy.toLocaleLowerCase();
     return this.commands.filter((commande : Commande) => 
-    commande.commandeSociete.toLocaleLowerCase().indexOf(filterBy) !== -1);
+    commande.societe.toLocaleLowerCase().indexOf(filterBy) !== -1);
 }
-deleteCommande(id : number): void {};
-ModifCommande(id : number): void {};
+deleteCommande(id : number): void {
+  this.ordreService.deleteCommande(id).subscribe(
+    data => this.ngOnInit()
+  );
+};
+ModifCommande(id : number): void {
+  this.router.navigate(['/modifCommande/',id]);
+};
 detailCommande(id : number): void {
   this.router.navigate(['/detailCommande/',id]);
 }

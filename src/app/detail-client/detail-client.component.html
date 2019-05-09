@@ -1,7 +1,7 @@
 <div class="panel panel-primary">
     <div class="panel-heading">
            
-    <div style="margin-left:auto; margin-right: auto; text-align:center;"> <h1>{{pageTitle}}</h1></div> 
+    <div style="margin-left:auto; margin-right: auto; text-align:center;"> <h1>{{pageTitle +' : '+ client.idClient}}</h1></div> 
     </div><br>
 
     <div class="panel panel-primary">
@@ -10,49 +10,49 @@
                 <div class="col-md-8">
                     <div class="row">
                         <div class="col-md-4"> 
-                          <div class="row"><span class="detail">Nom :    </span>  Bibi</div>
+                          <div class="row"><span class="detail">Nom :    </span>   <label>{{client.nomClient}}</label></div>
                         </div>
                         <div class="col-md-4">
-                            <div class="row"><span class="detail">Prénom :</span> Baba</div></div>
+                            <div class="row"><span class="detail">Prénom :</span> <label>{{client.prenomClient}}</label></div></div>
                     </div>
                     <div class="row">
                         <div class="col-md-4">
-                          <div class="row"><span class="detail">Date de naissance : </span> XXXXX</div>
+                          <div class="row"><span class="detail">Date de naissance : </span><label>{{client.dateNaissance}}</label></div>
                           </div>
                     </div>
                     <div class="row">
                         <div class="col-md-4">
-                          <div class="row"><span class="detail"> Société :</span> Adaming</div>
+                          <div class="row"><span class="detail"> Société :</span> <label>{{client.nomSociete}}</label></div>
                           </div>
                     </div>
                     <div class="row">
                         <div class="col-md-4">
-                          <div class="row"><span class="detail"> Adresse:  </span> 24 rue quelque chose</div>
+                          <div class="row"><span class="detail"> Adresse:  </span><label>{{client.adresse}}</label></div>
                           </div>
                     </div>
                     <div class="row">
                         <div class="col-md-4">
-                          <div class="row"> <span class="detail">Ville :</span> Lyon</div>
+                          <div class="row"> <span class="detail">Ville :</span><label>{{client.ville}}</label></div>
                           </div>
                     </div>
                     <div class="row">
                         <div class="col-md-4">
-                          <div class="row"> <span class="detail">Code postal :</span> 69200</div>
+                          <div class="row"> <span class="detail">Code postal :</span> <label>{{client.zipcode}}</label></div>
                           </div>
                     </div>
                     <div class="row">
                         <div class="col-md-4">
-                          <div class="row"><span class="detail">Email :</span> gmail@gmail.com</div>
+                          <div class="row"><span class="detail">Email :</span><label> {{client.mail}}</label></div>
                           </div>
                     </div>
                     <div class="row">
                         <div class="col-md-4">
-                          <div class="row"><span class="detail"> N° de téléphone :</span> 555 555</div>
+                          <div class="row"><span class="detail"> N° de téléphone :</span> <label>{{client.numTel}}</label></div>
                           </div>
                     </div>
                     <div class="row">
                         <div class="col-md-4">
-                          <div class="row"><span class="detail"> Fax :</span> 555 550</div>
+                          <div class="row"><span class="detail"> Fax :</span> <label>{{client.fax}}</label></div>
                           </div>
                     </div>
                 </div>

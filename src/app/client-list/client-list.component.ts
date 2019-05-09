@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { IClient } from './client';
+import { ClientServiceService } from '../client-service.service';
+import { Router } from '@angular/router';
+import { Client } from '../shared/IClient';
 
 @Component({
   selector: 'app-client-list',
@@ -17,54 +20,44 @@ export class ClientListComponent implements OnInit {
     this._filter = value;
      }
 
-  filteredClients: IClient[];
-  clients: IClient[] = [
-    {
-      clientId: 1,
-      clientName: "aaaa",
-      clientPrenom: "Client1",
-      clientDn: "17 juin 1995",
-      clientAdresse: "Nantes",
-      clientNomSociete: "societe",
-      clientTel: "0556245645",
-      clientFax: "0561561563",
-      clientMail: "lg@gmail.com",
-    },
-    {
-      clientId: 2,
-      clientName: "bbbbb",
-      clientPrenom: "Client2",
-      clientDn: "15 mai 1990",
-      clientAdresse: "Nantes",
-      clientNomSociete: "societe",
-      clientTel: "0556245645",
-      clientFax: "0561561563",
-      clientMail: "al@gmail.com",
-    }
-  ];
+  filteredClients: Client[];
+  clients: Client[] ;
 
 
 
 
-  constructor() {
-    this.filteredClients = this.clients;
+  constructor(private clientService : ClientServiceService, private router: Router) {
     this.filter = '';
   }
 
   ngOnInit() {
-    console.log('Person : ')
+    this.clientService.getAllClients().subscribe(
+      data => {
+        this.clients = data;
+        this.filteredClients= this.clients;})
   }
 
   performFilter(filterBy: string) {
     filterBy = filterBy.toLocaleLowerCase();
-    return this.clients.filter((client: IClient) =>
-      client.clientName.toLocaleLowerCase().indexOf(filterBy) !== -1);
+    return this.clients.filter((client: Client) =>
+      client.nomClient.toLocaleLowerCase().indexOf(filterBy) !== -1);
   }
 
   search(value:string){
       this.filteredClients = this._filter ? this.performFilter(this._filter) : this.clients;
   }
 
+  deleteClient(id : number): void {
+    this.clientService.deleteClient(id).subscribe(
+      data => this.ngOnInit()
+    );
+  };
+ModifClient(id : number): void {
+  this.router.navigate(['/modifClient/',id]);
+};
+detailClient(id : number): void {
+  this.router.navigate(['/detailClient/',id]);
+}
 
 
 }

@@ -1,0 +1,122 @@
+<div class="panel panel-primary">
+
+    <div class="panel-heading">
+      <h1 align = "center">ORDRE DE COUPE</h1>
+    </div>
+    
+    <div class="panel-body">
+  
+
+      <td>FABRICANT :</td><input type = "text" [(ngModel)]='commande.fabricant'>
+      <td>MODELE :</td><input type = "text" [(ngModel)]='commande.modele' >
+      <td>DATE :</td><input type = "date" [(ngModel)]='commande.date' >{{commande.date}}
+  
+
+      <div class="row">
+          <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" [(ngModel)]='commande.coupeEnBout'>
+              <label class="form-check-label" for="defaultCheck1"> COUPE EN BOUT </label>
+          </div>
+          <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" [(ngModel)]='commande.thermo'>
+              <label class="form-check-label" for="defaultCheck1"> THERMO</label>
+           </div>
+          <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" [(ngModel)]='commande.empdbl'>
+              <label class="form-check-label" for="defaultCheck1">EMP/DBL</label>
+          </div>
+      </div>
+      <table>
+          <tr>
+            <td>THERMO :</td><input type = "text" [(ngModel)]='commande.thermoType'>
+          </tr>
+          <tr>
+            <td>FACONNIER :</td><input type = "text" [(ngModel)]='commande.faconnier'>
+            <td>SOCIETE :</td><input type = "text" [(ngModel)]='commande.societe'>
+            <td>RECEPTIONNEUR :</td><input type = "text" [(ngModel)]='commande.receptionneur'>
+          </tr>
+        </table>
+  
+        <div class = "container">
+        <table class="table-responsive">
+            <thead>
+              <tr>
+                <th>Code</th>
+                <th>Couleur</th>
+                <th>Taille</th>
+                <th>Quantité</th>
+                <th>Prix</th>
+                <th></th>
+              </tr>
+            </thead>
+        
+            <tbody>
+              <tr *ngFor='let produit of produits'>
+                  <td>{{produit.idProduit}}</td>
+                <td>{{produit.couleur}}</td>
+                <td>{{produit.taille}}</td>
+                <td>{{produit.quantiteProduit}}</td>
+                <td>{{produit.prix}}</td>
+                <td><a class="clickable" (click)='deleteProduit(produit.idProduit)'>Supprimer</a></td>
+              </tr>
+            </tbody>
+          </table>
+  
+  
+  
+      <div class="form-group">
+        <label for="couleur">Couleur :</label>
+        <input type="text" [(ngModel)]='produit.couleur' class="form-control" name="couleur" />
+      </div>
+      <div class="form-group">
+        <label for="taille">Taille :</label>
+        <input type="text" [(ngModel)]='produit.taille' class="form-control" name="taille" />
+      </div>
+      <div class="form-group">
+        <label for="quantite">Quantité :</label>
+        <input type="number" [(ngModel)]='produit.quantiteProduit' class="form-control" name="quantite" />
+      </div>
+      <div class="form-group">
+        <label for="prix">Prix :</label>
+        <input type="number" [(ngModel)]='produit.prix' class="form-control" name="prix" />
+      </div>
+    
+      <button (click)='ajouterProduit()' class="btn btn-primary">Ajouter</button>
+      
+  
+  </div>
+  
+  
+  
+  
+
+  
+      <button (click)='EnregistreCommande()' class="btn btn-primary">Modifier</button>
+    </div>
+          
+    
+  
+  
+      
+  
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  

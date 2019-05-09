@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Produit } from '../shared/IProduit';
 import { OrdreServiceService } from '../ordre-service.service';
+import { Commande } from '../shared/ICommande';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-commande-list',
@@ -8,10 +10,28 @@ import { OrdreServiceService } from '../ordre-service.service';
   styleUrls: ['./commande-list-elodie.component.css']
 })
 export class CommandeListElodieComponent implements OnInit {
+  produits: Produit[];
+  produit : Produit = {idProduit:0, quantiteProduit:0, taille:"",couleur:"",prix:0};  
+  commande : Commande = {
+    id : 0, 
+    coupeEnBout : true,
+    thermo : true,
+    emplDbl : true,
+    thermoType : "",
+    faconnier : "",
+    societe : "",
+    receptionneur : "",
+    date: "",
+    fabricant : "",
+    modele : "",
+    ListProduits : [] 
 
-  produit : Produit = {produitId:0, quantiteProduit:0, produitTaille:"",produitCouleur:"",produitPrix:0};  
-  
-  constructor(private ordreService : OrdreServiceService) { }
+  };
+
+
+  constructor(private ordreService : OrdreServiceService,
+    private router: Router
+    ) { }
 
   ngOnInit() {
   }
@@ -21,5 +41,13 @@ export class CommandeListElodieComponent implements OnInit {
       data => this.ngOnInit()
     );
   }
+  ajouterCommande() : void {
+    this.ordreService.ajouterCommande(this.commande).subscribe(
+      data => this.ngOnInit()
+    );
+    this.router.navigate(['/commandes/']);
+  }
+
+
 
   }

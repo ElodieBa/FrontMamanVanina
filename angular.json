@@ -28,6 +28,7 @@
             ],
             "scripts": [],
             "es5BrowserSupport": true
+           
           },
           "configurations": {
             "production": {
