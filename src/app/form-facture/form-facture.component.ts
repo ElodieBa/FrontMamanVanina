@@ -26,19 +26,18 @@ export class FormFactureComponent implements OnInit {
     montantEcheance:0,
     escompte:0,
     ordredecommande:null
+   
   }
   constructor(private factureService : FactureService,
     private router: Router) { }
 
   ngOnInit() {
-    this.factureService.saveFacture(this.facture).subscribe(
-      data => this.router.navigate(['/factures'])
-    );
+
   }
 
   saveFacture() : void {
     this.factureService.saveFacture(this.facture).subscribe(
-      data => this.router.navigate(['/factures'])
+      data => this.router.navigate(['/Factures'])
     );
   }
  

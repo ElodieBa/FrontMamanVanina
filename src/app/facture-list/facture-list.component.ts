@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Facture } from './facture';
-import { FactureService } from './facture.service';
+
+
 import { Router } from '@angular/router';
+import { FactureService } from '../facture-service.service';
+import { Facture } from '../shared/IFacture';
 
 @Component({
   selector: 'app-facture-list',
@@ -51,11 +53,11 @@ export class FactureListComponent implements OnInit {
 
   // ];
 
-  constructor(private factureService: FactureService, private router: Router) {
+  constructor(private factureService : FactureService, private router: Router) {
     this.filter = '';
   }
 
-  ngOnInit(): void {
+  ngOnInit(){
     this.factureService.getAllFactures().subscribe(data => {
       this.factures = data;
       this.filteredFactures = this.factures;
@@ -71,7 +73,9 @@ export class FactureListComponent implements OnInit {
   detailFacture(id: number): void {
     this.router.navigate(['/detailFactures/', id]);
   }
-
+  modifFacture(id: number): void {
+    this.router.navigate(['/modifFacture/', id]);
+  }
 
   search(value:string) {
   this.filteredFactures = this._filter ? this.performFilter(this._filter) : this.factures;
@@ -80,7 +84,7 @@ export class FactureListComponent implements OnInit {
   performFilter(filterBy: string): Facture[] {
     filterBy = filterBy.toLocaleLowerCase();
     return this.factures.filter((facture: Facture) =>
-      facture.description.toLocaleLowerCase().indexOf(filterBy) !== -1);
+      facture.modeReglement.toLocaleLowerCase().indexOf(filterBy) !== -1);
   }
 
 }

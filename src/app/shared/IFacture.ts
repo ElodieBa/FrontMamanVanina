@@ -1,14 +1,18 @@
+import { Commande } from './ICommande';
+
 export interface Facture {
     numCommande: number;
     date: Date;
     dateEcheance: Date;
-    modeReglement:string;
+    modeReglement: string;
     numTVA: number;
     dateLivraison: Date;
     tva: number;
-    remise:number;
+    remise: number;
     acomptes: number;
-    montantEcheance:number;
-    escompte:number;
-    ordredecommande: object;
-} 
+    montantEcheance: number;
+    escompte: number;
+    ordredecommande: Commande;
+
+
+}
